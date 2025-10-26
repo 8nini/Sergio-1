@@ -190,32 +190,16 @@ const App = () => {
           "@context": "https://schema.org",
           "@type": "TattooParlor",
           "name": "Sergio Tattoo",
-          "description": "Tatuador profesional en Caracas y Miranda, Venezuela. Especialista en Blackwork, Realismo y cejas.",
+          "description": "Tatuador profesional especializado en Blackwork, Realismo y cejas en Estado Miranda, Venezuela",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Caracas",
-            "addressRegion": "Distrito Capital",
+            "addressLocality": "Estado Miranda",
+            "addressRegion": "Miranda",
             "addressCountry": "VE"
           },
-          "areaServed": [
-            {
-              "@type": "State",
-              "name": "Miranda"
-            },
-            {
-              "@type": "City",
-              "name": "Caracas"
-            }
-          ],
           "telephone": "+584242049941",
-          "url": "https://yohana-1.vercel.app",
-          "sameAs": ["https://instagram.com/sergiofernandez_tattoo"],
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "09:00",
-            "closes": "18:00"
-          },
+          "url": "https://sergio-1.vercel.app",
+          "areaServed": ["Caracas", "Los Teques", "Altos Mirandinos", "Miranda"],
           "priceRange": "$$"
         })}
       </script>
@@ -232,25 +216,16 @@ const App = () => {
       </script>
 
       {/* Meta Tags SEO optimizados */}
-      <meta charSet="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="Tatuador profesional en Caracas y Miranda con más de 10 años de experiencia. Especialista en Blackwork, Realismo, cejas y transformación de tatuajes." />
-      <meta name="keywords" content="tatuador en Caracas, tatuador en Miranda, tatuajes Distrito Capital, Blackwork Venezuela, Sergio Fernández tattoo, cejas microblading, estudio de tatuajes Venezuela, tatuajes realistas" />
+      <title>Sergio Fernández | Tatuador Profesional en Caracas y Estado Miranda</title>
+      <meta name="description" content="Tatuador profesional especializado en Blackwork y cejas en Caracas y Estado Miranda. +10 años de experiencia. WhatsApp: 0424-2049941" />
+      <meta name="keywords" content="tatuador Caracas, tatuador Miranda, tatuajes Estado Miranda, cejas Caracas, Sergio Fernández tattoo, blackwork Venezuela, estudio de tatuajes Venezuela" />
       <meta name="author" content="Sergio Fernández" />
       <meta name="robots" content="index, follow" />
-      <meta name="googlebot" content="index, follow" />
-      <meta property="og:title" content="Sergio Fernández - Tatuador Profesional en Caracas y Miranda" />
-      <meta property="og:description" content="Transforma tus ideas en arte permanente con un especialista en Blackwork y Realismo en Caracas y Miranda." />
-      <meta property="og:image" content="https://yohana-1.vercel.app/images/hero.webp" />
-      <meta property="og:url" content="https://yohana-1.vercel.app" />
-      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Sergio Fernández | Tatuador Profesional Caracas - Miranda" />
+      <meta property="og:description" content="📍 Especialista en Blackwork y cejas en Caracas y Estado Miranda | 💰 Precios en USD/Bs | 📱 WhatsApp: 0424-2049941" />
+      <meta property="og:url" content="https://sergio-1.vercel.app" />
       <meta property="og:locale" content="es_VE" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Sergio Fernández - Tatuador Profesional en Caracas y Miranda" />
-      <meta name="twitter:description" content="Especialista en Blackwork y transformación de tatuajes en Caracas y Miranda, Venezuela." />
-      <meta name="twitter:image" content="https://yohana-1.vercel.app/images/hero.webp" />
-      <link rel="canonical" href="https://yohana-1.vercel.app" />
-      <title>Tatuador en Caracas y Miranda - Sergio Tattoo | Blackwork & Cejas</title>
 
       <div className="min-h-screen bg-background text-text-primary font-inter">
         <Header

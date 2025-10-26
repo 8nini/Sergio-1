@@ -35,20 +35,12 @@ const Hero = ({ whatsappLink, scrollToSection }) => {
           Artista Principal - Blackouts & Blackwork
         </motion.p>
         <motion.p
-          className="text-base sm:text-lg md:text-xl text-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          Transformo tus ideas en arte permanente. Especialista en diseños minimalistas y transformación de tatuajes viejos.
-        </motion.p>
-        <motion.p
-          className="text-base sm:text-lg text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7, duration: 0.6 }}
-        >
-          Tatuador profesional disponible con estudio móvil en Chacao, Baruta, El Hatillo, Charallave, Cua, Los Teques y toda la Gran Caracas.
+          Como <strong>tatuador profesional en Caracas</strong>, transformo tus ideas en arte permanente. Mi especialidad son los diseños minimalistas y la transformación de tatuajes viejos, ofreciendo <strong>tatuajes en Estado Miranda</strong> y toda la Gran Caracas con un <strong>estudio de tatuajes en Venezuela</strong> que llega hasta ti.
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center"
