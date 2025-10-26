@@ -23,9 +23,9 @@ const AboutUs = () => {
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center mb-12" variants={itemVariants}>
-          <h2 className="text-4xl md:text-5xl font-bold text-text-primary font-poppins">Sobre Nosotros</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary font-poppins">Sobre Nuestro Estudio de Tatuajes en Venezuela</h2>
           <p className="text-lg md:text-xl text-text-secondary mt-4">
-            Tatuajes: Donde la Historia se Encuentra con tu Estilo
+            Donde la Historia se Encuentra con tu Estilo, de la mano de un <strong>tatuador profesional en Caracas</strong>.
           </p>
         </motion.div>
 
@@ -63,7 +63,7 @@ const AboutUs = () => {
           <hr className="border-card-bg/50" />
 
           <motion.div variants={itemVariants} className="text-center">
-            <h4 className="text-xl font-bold text-text-primary">¿Listo para dejar tu marca?</h4>
+            <h4 className="text-xl font-bold text-text-primary">¿Listo para dejar tu marca con los mejores tatuajes en Estado Miranda?</h4>
             <p className="mt-2">Agenda una consulta gratuita y crea un tatuaje que no solo se vea bien… sino que signifique algo.</p>
           </motion.div>
         </motion.div>
