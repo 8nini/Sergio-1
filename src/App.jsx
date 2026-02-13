@@ -13,9 +13,16 @@ import {
   ClockIcon,
   SunIcon,
 } from '@heroicons/react/24/outline';
+import Header from './components/Header';
+import AboutUs from './components/AboutUs';
+import TattooStyles from './components/TattooStyles';
+import EyebrowStyles from './components/EyebrowStyles';
+import FaceShapes from './components/FaceShapes';
+import Hero from './components/Hero';
+import Testimonials from './components/Testimonials';
 
 const App = () => {
-  const [state, handleSubmit] = useForm("YOUR_FORM_ID");
+  const [state, handleSubmit] = useForm("xyznkvap");
   const [selectedImage, setSelectedImage] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
@@ -97,6 +104,11 @@ const App = () => {
     setDesignImage(imageSrc);
   };
 
+  const handleDesignImageError = () => {
+    setDesignImage(null);
+    alert('La imagen no se pudo cargar. Por favor, verifica la URL e inténtalo de nuevo.');
+  };
+
   const handleAiSubmit = (e) => {
     e.preventDefault();
     if (!aiPrompt) return;
@@ -116,25 +128,25 @@ const App = () => {
   };
 
   const tattooStyles = [
-    { id: 1, name: "Blackwork", image: "/images/blackwork.jpg", description: "Diseños impactantes utilizando únicamente tinta negra, con contrastes dramáticos y composiciones poderosas." },
-    { id: 2, name: "Realismo", image: "/images/realismo.jpg", description: "Tatuajes con detalles hiperrealistas que parecen fotografías en la piel. Cada sombra y textura cuidadosamente recreada." },
-    { id: 3, name: "Tradicionales", image: "/images/tradicionales.jpg", description: "Estilo clásico americano con líneas gruesas, colores vibrantes y diseños icónicos que trascienden generaciones." },
-    { id: 4, name: "Geométricos", image: "/images/geometricos.jpg", description: "Diseños precisos basados en formas geométricas, patrones simétricos y mandalas que crean armonía visual en la piel." },
-    { id: 5, name: "Japonés", image: "/images/japones.jpg", description: "Estilo tradicional japonés con motivos culturales, simbólicos y mitológicos que cuentan historias ancestrales." }
+    { id: 1, name: "Blackwork", image: "/images/blackwork.webp", description: "Diseños impactantes utilizando únicamente tinta negra, con contrastes dramáticos y composiciones poderosas." },
+    { id: 2, name: "Realismo", image: "/images/realismo.webp", description: "Tatuajes con detalles hiperrealistas que parecen fotografías en la piel. Cada sombra y textura cuidadosamente recreada." },
+    { id: 3, name: "Tradicionales", image: "/images/tradicionales.webp", description: "Estilo clásico americano con líneas gruesas, colores vibrantes y diseños icónicos que trascienden generaciones." },
+    { id: 4, name: "Geométricos", image: "/images/geometricos.webp", description: "Diseños precisos basados en formas geométricas, patrones simétricos y mandalas que crean armonía visual en la piel." },
+    { id: 5, name: "Japonés", image: "/images/japones.webp", description: "Estilo tradicional japonés con motivos culturales, simbólicos y mitológicos que cuentan historias ancestrales." }
   ];
 
   const eyebrowStyles = [
-    { id: 1, name: "Hair Stroke – Hiperrealismo pelo a pelo", image: "/images/hair-stroke.jpg", description: "Trazos finos y precisos que imitan cada vello con realismo absoluto. Ideal para un look suave, fresco y 100% natural, incluso sin maquillaje." },
-    { id: 2, name: "Messy Brows – Volumen con actitud", image: "/images/messy-brows.jpg", description: "Un estilo moderno, espontáneo y lleno de vida. Cejas con movimiento, textura y volumen que lucen como recién peinadas… ¡sin hacer nada!" },
-    { id: 3, name: "Tupidas y Laminadas – Densidad con brillo", image: "/images/tupidas-laminadas.jpg", description: "Combinamos micropigmentación con tratamiento laminado para crear cejas densas, ordenadas y con un acabado brillante y saludable que dura semanas." },
-    { id: 4, name: "Powder Brows – Sombreado suave y elegante", image: "/images/powder-brows.jpg", description: "Un relleno difuminado que imita el polvo de cejas, con bordes suaves y color uniforme. Perfecto para un look definido, moderno y natural al mismo tiempo." },
-    { id: 5, name: "Estilo Híbrido – Lo mejor de dos mundos", image: "/images/hibrido.jpg", description: "Fusionamos trazos realistas en la parte delantera con sombreado suave en el centro y cola. El equilibrio ideal entre realismo y definición." }
+    { id: 1, name: "Hair Stroke – Hiperrealismo pelo a pelo", image: "/images/hair-stroke.webp", description: "Trazos finos y precisos que imitan cada vello con realismo absoluto. Ideal para un look suave, fresco y 100% natural, incluso sin maquillaje." },
+    { id: 2, name: "Messy Brows – Volumen con actitud", image: "/images/messy-brows.webp", description: "Un estilo moderno, espontáneo y lleno de vida. Cejas con movimiento, textura y volumen que lucen como recién peinadas… ¡sin hacer nada!" },
+    { id: 3, name: "Tupidas y Laminadas – Densidad con brillo", image: "/images/tupidas-laminadas.webp", description: "Combinamos micropigmentación con tratamiento laminado para crear cejas densas, ordenadas y con un acabado brillante y saludable que dura semanas." },
+    { id: 4, name: "Powder Brows – Sombreado suave y elegante", image: "/images/powder-brows.webp", description: "Un relleno difuminado que imita el polvo de cejas, con bordes suaves y color uniforme. Perfecto para un look definido, moderno y natural al mismo tiempo." },
+    { id: 5, name: "Estilo Híbrido – Lo mejor de dos mundos", image: "/images/hibrido.webp", description: "Fusionamos trazos realistas en la parte delantera con sombreado suave en el centro y cola. El equilibrio ideal entre realismo y definición." }
   ];
 
   const artist = {
     name: "Sergio Fernández",
     specialty: "Artista Principal - Blackouts y Blackwork",
-    image: "/images/sergio.jpg",
+    image: "/images/sergio.webp",
     bio: "Tatuador independiente con más de 10 años de experiencia, especializado en Blackouts y Blackwork. Experto en diseños minimalistas y con la capacidad de transformar tus tatuajes viejos en nuevos diseños innovadores. Reconocido por su técnica impecable y atención al detalle.",
     instagram: "@sergiofernandez_tattoo",
     email: "styletattoo86@gmail.com",
@@ -143,10 +155,10 @@ const App = () => {
   };
 
   const galleryImages = [
-    { src: "/images/galeria-1.jpg", alt: "Tatuaje de rosario en hombro y brazo, estilo blackwork." },
-    { src: "/images/galeria-2.jpg", alt: "Tatuaje de dragón en la espalda, estilo japonés a color." },
-    { src: "/images/galeria-3.jpg", alt: "Tatuaje de diseño biomecánico en antebrazo, blackwork." },
-    { src: "/images/galeria-4.jpg", alt: "Tatuaje de rostro de mujer en antebrazo, blackwork." }
+    { src: "/images/galeria-1.webp", alt: "Tatuaje de rosario en hombro y brazo, estilo blackwork." },
+    { src: "/images/galeria-2.webp", alt: "Tatuaje de dragón en la espalda, estilo japonés a color." },
+    { src: "/images/galeria-3.webp", alt: "Tatuaje de diseño biomecánico en antebrazo, blackwork." },
+    { src: "/images/galeria-4.webp", alt: "Tatuaje de rostro de mujer en antebrazo, blackwork." }
   ];
 
   const testimonials = [
@@ -178,32 +190,16 @@ const App = () => {
           "@context": "https://schema.org",
           "@type": "TattooParlor",
           "name": "Sergio Tattoo",
-          "description": "Tatuador profesional en Caracas y Miranda, Venezuela. Especialista en Blackwork, Realismo y cejas.",
+          "description": "Tatuador profesional especializado en Blackwork, Realismo y cejas en Estado Miranda, Venezuela",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Caracas",
-            "addressRegion": "Distrito Capital",
+            "addressLocality": "Estado Miranda",
+            "addressRegion": "Miranda",
             "addressCountry": "VE"
           },
-          "areaServed": [
-            {
-              "@type": "State",
-              "name": "Miranda"
-            },
-            {
-              "@type": "City",
-              "name": "Caracas"
-            }
-          ],
           "telephone": "+584242049941",
-          "url": "https://yohana-1.vercel.app",
-          "sameAs": ["https://instagram.com/sergiofernandez_tattoo"],
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "09:00",
-            "closes": "18:00"
-          },
+          "url": "https://sergio-1.vercel.app",
+          "areaServed": ["Caracas", "Los Teques", "Altos Mirandinos", "Miranda"],
           "priceRange": "$$"
         })}
       </script>
@@ -220,339 +216,37 @@ const App = () => {
       </script>
 
       {/* Meta Tags SEO optimizados */}
-      <meta charSet="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="Tatuador profesional en Caracas y Miranda con más de 10 años de experiencia. Especialista en Blackwork, Realismo, cejas y transformación de tatuajes." />
-      <meta name="keywords" content="tatuador en Caracas, tatuador en Miranda, tatuajes Distrito Capital, Blackwork Venezuela, Sergio Fernández tattoo, cejas microblading, estudio de tatuajes Venezuela, tatuajes realistas" />
+      <title>Sergio Fernández | Tatuador Profesional en Caracas y Estado Miranda</title>
+      <meta name="description" content="Tatuador profesional especializado en Blackwork y cejas en Caracas y Estado Miranda. +10 años de experiencia. WhatsApp: 0424-2049941" />
+      <meta name="keywords" content="tatuador Caracas, tatuador Miranda, tatuajes Estado Miranda, cejas Caracas, Sergio Fernández tattoo, blackwork Venezuela, estudio de tatuajes Venezuela" />
       <meta name="author" content="Sergio Fernández" />
       <meta name="robots" content="index, follow" />
-      <meta name="googlebot" content="index, follow" />
-      <meta property="og:title" content="Sergio Fernández - Tatuador Profesional en Caracas y Miranda" />
-      <meta property="og:description" content="Transforma tus ideas en arte permanente con un especialista en Blackwork y Realismo en Caracas y Miranda." />
-      <meta property="og:image" content="https://yohana-1.vercel.app/images/hero.jpg" />
-      <meta property="og:url" content="https://yohana-1.vercel.app" />
-      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Sergio Fernández | Tatuador Profesional Caracas - Miranda" />
+      <meta property="og:description" content="📍 Especialista en Blackwork y cejas en Caracas y Estado Miranda | 💰 Precios en USD/Bs | 📱 WhatsApp: 0424-2049941" />
+      <meta property="og:url" content="https://sergio-1.vercel.app" />
       <meta property="og:locale" content="es_VE" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Sergio Fernández - Tatuador Profesional en Caracas y Miranda" />
-      <meta name="twitter:description" content="Especialista en Blackwork y transformación de tatuajes en Caracas y Miranda, Venezuela." />
-      <meta name="twitter:image" content="https://yohana-1.vercel.app/images/hero.jpg" />
-      <link rel="canonical" href="https://yohana-1.vercel.app" />
-      <title>Tatuador en Caracas y Miranda - Sergio Tattoo | Blackwork & Cejas</title>
 
       <div className="min-h-screen bg-background text-text-primary font-inter">
-        <div 
-          className="fixed top-0 left-0 h-1 bg-primary-accent z-50 transition-all duration-100"
-          style={{ width: `${scrollProgress}%` }}
-        ></div>
+        <Header
+          scrollProgress={scrollProgress}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+          activeSection={activeSection}
+          scrollToSection={scrollToSection}
+          whatsappLink={whatsappLink}
+        />
 
-        <motion.header 
-          className="fixed w-full z-50 bg-background/90 backdrop-blur-md border-b border-card-bg/50"
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-20">
-              <div className="flex items-center space-x-3">
-                <motion.div 
-                  className="w-12 h-12 bg-primary-accent rounded-full flex items-center justify-center shadow-lg"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <svg className="w-7 h-7 text-background" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                  </svg>
-                </motion.div>
-                <h1 className="text-2xl font-bold text-primary-accent font-poppins">
-                  Sergio Tattoo
-                </h1>
-              </div>
-              
-              <nav className="hidden lg:flex items-center space-x-1">
-                {['inicio', 'estilos', 'sobre-nosotros', 'cejas', 'artistas', 'galeria', 'simulador', 'inspiracion-ia', 'cuidados', 'contacto'].map((section) => (
-                  <motion.button
-                    key={section}
-                    onClick={() => scrollToSection(section)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                      activeSection === section
-                        ? 'bg-primary-accent text-background'
-                        : 'text-text-secondary hover:text-text-primary'
-                    }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {section === 'sobre-nosotros' ? 'Sobre Nosotros' : section.charAt(0).toUpperCase() + section.slice(1)}
-                  </motion.button>
-                ))}
-              </nav>
+        <Hero whatsappLink={whatsappLink} scrollToSection={scrollToSection} />
 
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden lg:block bg-primary-accent hover:bg-opacity-80 px-6 py-2.5 rounded-full font-semibold text-sm text-background transition-all duration-300 shadow-lg"
-              >
-                Agenda tu cita
-              </a>
+        <TattooStyles tattooStyles={tattooStyles} />
 
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden p-2 rounded-md text-text-secondary hover:text-text-primary"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
+        <AboutUs />
 
-            {isMenuOpen && (
-              <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-card-bg/50">
-                <div className="px-4 py-4 space-y-2">
-                  {['inicio', 'estilos', 'sobre-nosotros', 'cejas', 'artistas', 'galeria', 'simulador', 'inspiracion-ia', 'cuidados', 'contacto'].map((section) => (
-                    <button
-                      key={section}
-                      onClick={() => scrollToSection(section)}
-                      className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
-                        activeSection === section
-                          ? 'bg-primary-accent text-background'
-                          : 'text-text-secondary hover:text-text-primary'
-                      }`}
-                    >
-                      {section === 'sobre-nosotros' ? 'Sobre Nosotros' : section.charAt(0).toUpperCase() + section.slice(1)}
-                    </button>
-                  ))}
-                  <a
-                    href={whatsappLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full text-center bg-primary-accent hover:bg-opacity-80 px-4 py-3 rounded-lg font-semibold text-sm text-background transition-all duration-300 mt-2"
-                  >
-                    Agenda tu cita
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
-        </motion.header>
+        <EyebrowStyles eyebrowStyles={eyebrowStyles} />
+        <FaceShapes />
 
-        <section id="inicio" className="relative h-screen flex items-center justify-center bg-background">
-          <div className="absolute inset-0 bg-gradient-to-b from-background/20 to-background/80 z-0"></div>
-          <img 
-            src="/images/hero.jpg"
-            alt="Fondo estudio" 
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
-            loading="eager"
-            decoding="async"
-          />
-          <motion.div 
-            className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-text-primary mb-4 leading-tight font-poppins"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Sergio Fernández
-            </motion.h1>
-            <motion.p 
-              className="text-lg sm:text-xl md:text-2xl text-primary-accent mb-6 font-medium font-poppins"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              Artista Principal - Blackouts & Blackwork
-            </motion.p>
-            <motion.p 
-              className="text-base sm:text-lg md:text-xl text-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-            >
-              Transformo tus ideas en arte permanente. Especialista en diseños minimalistas y transformación de tatuajes viejos.
-            </motion.p>
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-            >
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-primary-accent hover:bg-opacity-80 px-8 py-3.5 rounded-full font-bold text-background transition-all duration-300 shadow-xl"
-              >
-                Contactar por WhatsApp
-              </a>
-              <button 
-                onClick={() => scrollToSection('galeria')} 
-                className="border-2 border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-background px-8 py-3.5 rounded-full transition-all duration-300 font-medium"
-              >
-                Ver Galería
-              </button>
-            </motion.div>
-          </motion.div>
-        </section>
-
-        <motion.section 
-          id="estilos" 
-          className="py-20 md:py-28 bg-background"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div className="text-center mb-16" variants={itemVariants}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-text-primary font-poppins">Estilos de Tatuaje</h2>
-              <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto">Especializado en técnicas que marcan tendencia en Caracas y Miranda.</p>
-            </motion.div>
-            <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" variants={containerVariants}>
-              {tattooStyles.map((style) => (
-                <motion.div 
-                  key={style.id} 
-                  className="bg-card-bg rounded-2xl overflow-hidden border border-card-bg/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="h-48 bg-gray-900 flex items-center justify-center">
-                     <img src={style.image} alt={style.name} className="max-h-full max-w-full object-contain transition-transform duration-700 hover:scale-110" loading="lazy" decoding="async" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-text-primary mb-3 font-poppins">{style.name}</h3>
-                    <p className="text-text-secondary leading-relaxed">{style.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </motion.section>
-
-        <motion.section
-          id="sobre-nosotros"
-          className="py-20 md:py-28 bg-card-bg"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div className="text-center mb-12" variants={itemVariants}>
-              <h2 className="text-4xl md:text-5xl font-bold text-text-primary font-poppins">Sobre Nosotros</h2>
-              <p className="text-lg md:text-xl text-text-secondary mt-4">
-                Tatuajes: Donde la Historia se Encuentra con tu Estilo
-              </p>
-            </motion.div>
-
-            <motion.div className="space-y-8 text-text-secondary" variants={containerVariants}>
-              <motion.p variants={itemVariants}>
-                El tatuaje no es solo arte en la piel: es una tradición milenaria que ha viajado desde los rituales sagrados de Polinesia, los símbolos curativos de Ötzi (¡hace más de 5.000 años!) y los diseños espirituales del Japón antiguo, hasta convertirse en una de las formas más personales de expresión en el mundo actual.
-              </motion.p>
-
-              <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-bold text-primary-accent mb-4 font-poppins">Raíces que inspiran</h3>
-                <ul className="list-disc list-inside ml-4 space-y-2">
-                  <li>En culturas como la maorí, el tatuaje contaba tu historia, tu linaje y tu lugar en el mundo.</li>
-                  <li>En el antiguo Egipto, protegía a las mujeres durante el embarazo.</li>
-                  <li>En Japón, los <em>irezumi</em> narraban leyendas de valentía y honor.</li>
-                </ul>
-              </motion.div>
-
-              <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-bold text-primary-accent mb-4 font-poppins">Hoy: tu piel, tu lienzo</h3>
-                <p className="mb-2">Hoy, el tatuaje fusiona esas raíces con innovación, tecnología y estilo. Ya sea que busques:</p>
-                <ul className="list-disc list-inside ml-4 space-y-2">
-                  <li>Un diseño <strong>minimalista y moderno</strong></li>
-                  <li>Un <strong>tribal con significado ancestral</strong></li>
-                  <li>Un <strong>realismo hiperdetallado</strong></li>
-                  <li>O un <strong>toque japonés, geométrico o acuarela</strong></li>
-                </ul>
-                <p className="mt-2">…lo hacemos con respeto, técnica y pasión.</p>
-              </motion.div>
-
-              <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-bold text-primary-accent mb-4 font-poppins">Seguridad + Estética = Confianza</h3>
-                <p>Trabajamos con equipos esterilizados, tintas de calidad y protocolos de higiene.</p>
-              </motion.div>
-
-              <hr className="border-card-bg/50" />
-
-              <motion.div variants={itemVariants} className="text-center">
-                <h4 className="text-xl font-bold text-text-primary">¿Listo para dejar tu marca?</h4>
-                <p className="mt-2">Agenda una consulta gratuita y crea un tatuaje que no solo se vea bien… sino que signifique algo.</p>
-              </motion.div>
-            </motion.div>
-          </div>
-        </motion.section>
-
-        <motion.section 
-          id="cejas" 
-          className="py-20 md:py-28 bg-background"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div className="text-center mb-16" variants={itemVariants}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-text-primary font-poppins">Warriors Cejas</h2>
-              <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto">¿Sueñas con cejas siempre impecables? Combinamos arte, técnica y las últimas tendencias para crear cejas que realzan tu mirada.</p>
-            </motion.div>
-            <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" variants={containerVariants}>
-              {eyebrowStyles.map((style) => (
-                <motion.div 
-                  key={style.id} 
-                  className="bg-card-bg rounded-2xl overflow-hidden border border-card-bg/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="h-48 bg-gray-900 flex items-center justify-center">
-                     <img src={style.image} alt={style.name} className="max-h-full max-w-full object-contain transition-transform duration-700 hover:scale-110" loading="lazy" decoding="async" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-text-primary mb-3 font-poppins">{style.name}</h3>
-                    <p className="text-text-secondary leading-relaxed">{style.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </motion.section>
-
-        <motion.section 
-          id="testimonios" 
-          className="py-20 md:py-28 bg-card-bg"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div className="text-center mb-16" variants={itemVariants}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-text-primary font-poppins">Lo que dicen mis clientes</h2>
-            </motion.div>
-            <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" variants={containerVariants}>
-              {testimonials.map((testimonial) => (
-                <motion.div key={testimonial.id} className="bg-background rounded-2xl p-6 border border-background/50" variants={itemVariants}>
-                  <div className="flex mb-2">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-primary-accent" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-text-secondary italic mb-4">"{testimonial.text}"</p>
-                  <p className="text-text-primary font-semibold">- {testimonial.name}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </motion.section>
+        <Testimonials testimonials={testimonials} />
 
         <motion.section 
           id="artistas" 
@@ -568,7 +262,7 @@ const App = () => {
             </div>
             <div className="bg-card-bg rounded-3xl overflow-hidden border border-card-bg/50 shadow-2xl">
               <div className="h-96 overflow-hidden">
-                <img src={artist.image} alt={artist.name} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                <img src={artist.image} alt={artist.name} className="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
               </div>
               <div className="p-8 md:p-12">
                 <h3 className="text-3xl md:text-4xl font-bold text-text-primary mb-3 font-poppins">{artist.name}</h3>
@@ -600,13 +294,13 @@ const App = () => {
               {galleryImages.map((img, i) => (
                 <motion.div 
                   key={i} 
-                  className="aspect-square bg-background rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl flex items-center justify-center"
+                  className="aspect-square rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl"
                   onClick={() => handleImageClick(img.src)}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <img src={img.src} alt={img.alt} className="max-w-full max-h-full object-contain transition-transform duration-500 hover:scale-110" loading="lazy" decoding="async" />
+                  <img src={img.src} alt={img.alt} className="w-full h-full object-contain transition-transform duration-500 hover:scale-110" loading="lazy" decoding="async" />
                 </motion.div>
               ))}
             </motion.div>
@@ -677,7 +371,7 @@ const App = () => {
                       <button
                         onClick={() => {
                           const isValidImageUrl = (url) => {
-                            return /\.(jpg|jpeg|png|webp|gif)$/i.test(url);
+                            return /\.(jpg|jpeg|png|webp|gif)(?:\?.*)?$/i.test(url);
                           };
                           if (isValidImageUrl(designUrl)) {
                             setDesignImage(designUrl);
@@ -722,7 +416,12 @@ const App = () => {
                   {simulatorImage && designImage && (
                     <Draggable bounds="parent" nodeRef={draggableRef}>
                       <div ref={draggableRef} className="absolute cursor-move" style={{ width: `${tattooSize}px`, height: 'auto' }}>
-                        <img src={designImage} alt="Diseño de tatuaje para simular" className="w-full h-full object-contain pointer-events-none" />
+                        <img
+                          src={designImage}
+                          alt="Diseño de tatuaje para simular"
+                          className="w-full h-full object-contain pointer-events-none"
+                          onError={handleDesignImageError}
+                        />
                       </div>
                     </Draggable>
                   )}
@@ -977,7 +676,7 @@ const App = () => {
         <footer className="bg-background py-12 border-t border-card-bg/50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-primary-accent font-poppins mb-4">Sergio Tattoo</h3>
-            <p className="text-text-secondary mb-2">Estudio de tatuajes en Caracas y Miranda, Venezuela</p>
+            <p className="text-text-secondary mb-2">Estudio de Tatuajes Móvil en Caracas y Miranda, Venezuela</p>
             <p className="text-text-secondary mb-4">Tel: {artist.phone}</p>
             <div className="mt-6">
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-green-600 hover:bg-green-700 px-6 py-2.5 rounded-full font-semibold text-white transition-all duration-300">
